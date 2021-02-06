@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <span class="fill-remaining-space"> Add Edit Asset</span>
+  </mat-toolbar>
+  
+  <div class="container" novalidate> 
+    <form [formGroup]="assetForm" (ngSubmit)="onSubmit(assetForm.value)" class="form">
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Model" formControlName="Model">
+        <mat-error *ngIf="!assetForm.controls['Model'].valid && assetForm.controls['Model'].touched">
+            {{ titleAlertRequired }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="RAM" formControlName="RAM">
+        <mat-error *ngIf="!assetForm.controls['RAM'].valid && assetForm.controls['RAM'].touched">
+            {{ titleAlertRequired }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="HDD" formControlName="HDD">
+        <mat-error *ngIf="!assetForm.controls['HDD'].valid && assetForm.controls['HDD'].touched">
+            {{ titleAlertRequired }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Location" formControlName="Location">
+        <mat-error *ngIf="!assetForm.controls['Location'].valid && assetForm.controls['Location'].touched">
+            {{ titleAlertRequired }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Price" formControlName="Price">
+        <mat-error *ngIf="!assetForm.controls['Price'].valid && assetForm.controls['Price'].touched">
+            {{ titleAlertRequired }}
+        </mat-error>
+      </mat-form-field>
+  
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!assetForm.valid">Submit Form</button>
+      </div>
+  
+    </form>
+  </div>
